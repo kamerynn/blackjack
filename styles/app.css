@@ -14,3 +14,11 @@
 .hand {
   overflow: auto;
 }
+
+.stats {
+  display: flex;
+}
+
+.new-game, .win-loss, .chips {
+  margin: 0 5px 5px 0;
+}
