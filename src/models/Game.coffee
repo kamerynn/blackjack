@@ -27,5 +27,10 @@ class window.Game extends Backbone.Model
     , 500 )
 
   compareScores: ->
-    console.log "comparing..."
+    # need to get score for both hands and compare
+    playerScore = @get('playerHand').score()
+    dealerScore = @get('dealerHand').score()
+    if playerScore > dealerScore then @trigger('win')
+    else if playerScore < dealerScore then @trigger('lose')
+    else @trigger('push')
     

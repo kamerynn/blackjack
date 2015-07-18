@@ -15,6 +15,7 @@ class window.GameView extends Backbone.View
     @render()
     @model.on('win', -> alert "YOU WON OMG")
     @model.on('lose', -> alert "you lost..")
+    @model.on('push', -> alert "It's a tie!")
 
   render: ->
     @$el.children().detach()
