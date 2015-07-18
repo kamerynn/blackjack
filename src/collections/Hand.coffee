@@ -5,7 +5,7 @@ class window.Hand extends Backbone.Collection
 
   hit: ->
     @add(@deck.pop())
-    #if @isDealer then @trigger('dealerValidation', @) else @trigger('playerValidation', @)
+    if @isDealer then @trigger('dealerValidation', @) else @trigger('playerValidation', @)
 
   hasAce: -> @reduce (memo, card) ->
     memo or card.get('value') is 1
