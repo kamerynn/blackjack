@@ -14,6 +14,10 @@ class window.GameView extends Backbone.View
   initialize: ->
     @render()
 
+    @model.on('win', -> alert "YOU WON OMG")
+
+    @model.on('lose', -> alert "you lost..")
+
   render: ->
     @$el.children().detach()
     @$el.html @template()

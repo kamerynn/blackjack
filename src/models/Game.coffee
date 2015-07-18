@@ -9,15 +9,18 @@ class window.Game extends Backbone.Model
 
     @get('dealerHand').on('dealerValidation', (hand) ->
       score = hand.score()
-      if score is 21 then 'lose' # trigger Lose
-      else if score > 21 then 'win' #trigger Win
+      if score is 21 then @trigger('lose')
+      else if score > 21 then @trigger('win')
       else if score < 17 then hand.hit()
-      else 'compare scores' # trigger compare scores
+      else @compareScores();
     , @)
 
     @get('playerHand').on('playerValidation', (hand) ->
       score = hand.score()
-      if score is 21 then console.log 'win' # trigger Win
-      else if score > 21 then console.log 'lose' # trigger Lose
+      if score is 21 then @trigger('win')
+      else if score > 21 then @trigger('lose')
     , @)
+
+  compareScores: ->
+    console.log "comparing..."
     
