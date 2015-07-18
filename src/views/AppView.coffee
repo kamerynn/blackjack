@@ -2,9 +2,14 @@ class window.AppView extends Backbone.View
   className: 'appView'
 
   template: _.template '
+    <h1>Blackjack</h1>
+    <div class="stats">
+      <div class="win-loss">Games won/lost: 0 / 0</div>
+      <div class="chips">Chips: 0</div> 
+    </div>
     <div class="gameview-container"></div>
   '
-
+  
   initialize: ->
     @render()
 

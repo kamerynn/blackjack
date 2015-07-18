@@ -2,12 +2,18 @@ class window.GameView extends Backbone.View
   className: 'gameView'
 
   template: _.template '
+    <div>
+      <button class="new-game">New Game</button>
+    </div>
     <button class="hit-button">Hit</button> <button class="stand-button">Stand</button>
     <div class="player-hand-container"></div>
     <div class="dealer-hand-container"></div>
   '
 
   events:
+    'click .new-game': -> 
+      @model.initialize()
+      @render()
     'click .hit-button': -> @model.get('playerHand').hit()
     'click .stand-button': -> @model.get('dealerHand').startDealerTurn()
 
