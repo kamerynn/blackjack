@@ -27,4 +27,5 @@ class window.Hand extends Backbone.Collection
     scores = @scores()
     # check if score[1] is between 0 and 22 -> valid hand
     if 0 < scores[1] and scores[1] < 22 then scores[1] else scores[0]
-    
+
+  stand: ->

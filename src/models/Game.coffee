@@ -21,6 +21,11 @@ class window.Game extends Backbone.Model
       else if score > 21 then @trigger('lose')
     , @)
 
+    # checks to see if player won on the first deal but waits first for everything to load
+    setTimeout( => 
+      @get('playerHand').trigger( 'playerValidation', @get('playerHand') )
+    , 500 )
+
   compareScores: ->
     console.log "comparing..."
     
