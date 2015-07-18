@@ -9,7 +9,7 @@ class window.GameView extends Backbone.View
 
   events:
     'click .hit-button': -> @model.get('playerHand').hit()
-    'click .stand-button': -> @model.get('dealerHand').stand()
+    'click .stand-button': -> @model.get('dealerHand').startDealerTurn()
 
   initialize: ->
     @render()
